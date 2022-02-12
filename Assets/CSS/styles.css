@@ -1,0 +1,443 @@
+/* Begin Global Styles */
+
+:root {
+    --primary: #ffce00;
+    --secondary: #fe4880;
+    --dark: #212121;
+    --light: rgba(209, 206, 206, 0.733);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: sans-serif;
+    width: 100%;
+    min-height: 100vh;
+}
+
+
+/* End Global Styles */
+
+
+/* Navbar Styles */
+
+.navbar {
+    background-color: #7c808d;
+    overflow: auto;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    top: 0;
+}
+
+.navbar a {
+    float: left;
+    text-align: center;
+    padding: 12px;
+    color: white;
+    text-decoration: underline;
+    font-size: 17px;
+}
+
+
+/* Navbar links on mouse-over */
+
+.navbar a:hover {
+    background-color: #000;
+}
+
+
+/* Current/active navbar link */
+
+.active {
+    background-color: #7CA5B8;
+}
+
+.name {
+    display: flex;
+    justify-self: flex-start;
+    align-items: center;
+    margin-left: 5%;
+    font-size: x-large;
+}
+
+
+/* End Navbar Styles*/
+
+
+/* Begin Card Styles */
+
+.card {
+    margin: 10px auto 0 20px;
+    width: 600px;
+    height: 800px;
+    perspective: 1000px;
+}
+
+.card__inner {
+    width: 100%;
+    height: 100%;
+    transition: transform 1s;
+    transform-style: preserve-3d;
+    cursor: pointer;
+    position: relative;
+}
+
+.card__inner.is-flipped {
+    transform: rotateY(180deg);
+}
+
+.card__face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    overflow: hidden;
+    border-radius: 16px;
+    box-shadow: 0px 3px 18px 3px rgba(0, 0, 0, 0.2);
+}
+
+.card__face--front {
+    background-image: linear-gradient(to bottom right, var(--primary), var(--secondary));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card__face--front h2 {
+    color: #fff;
+    font-size: 32px;
+}
+
+.card__face--back {
+    background-color: var(--light);
+    transform: rotateY(180deg);
+}
+
+.card__content {
+    width: 100%;
+    height: 100%;
+}
+
+.card__header {
+    position: relative;
+    padding: 30px 30px 40px;
+}
+
+.card__header-back {
+    position: relative;
+    padding-top: 30px;
+}
+
+.card__header-back::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    border-radius: 0 0 50% 0;
+    background-image: linear-gradient(to bottom left, var(--primary)10%, var(--secondary)115%);
+}
+
+.profilePic {
+    display: block;
+    width: 128px;
+    height: 128px;
+    margin: 0 auto 30px;
+    border-radius: 50%;
+    background-color: #fff;
+    border: 5px solid #fff;
+    object-fit: cover;
+}
+
+.card__header h2 {
+    margin-bottom: 2%;
+    color: #fff;
+    font-size: 32px;
+    font-weight: 900;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.skillHeader {
+    margin-left: 2%;
+}
+
+
+/* End Card Styles */
+
+
+/* Begin Expertise Card Styles */
+
+.cards {
+    width: 100%;
+    height: 30%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.skills {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    height: initial;
+    padding: 30px 10px;
+    margin: 2%;
+    text-align: center;
+    box-shadow: 12px 12px 2px 1px rgba(20, 20, 22, 0.2);
+    background: #fff;
+    align-items: center;
+}
+
+.skills h6 {
+    font-size: small;
+    display: flex;
+    flex-direction: column;
+    width: 5%;
+    height: initial;
+    margin: 2%;
+    text-align: center;
+    align-items: center;
+    word-wrap: normal;
+}
+
+.skills small {
+    padding-top: 10px;
+    display: block;
+}
+
+
+/* End Expertise Card Styles */
+
+#projects {
+    text-align: center;
+}
+
+
+/* Begin Carousel Styles */
+
+.container {
+    position: relative;
+    height: 600px;
+    width: 50%;
+    margin: 0 auto;
+}
+
+#carousel {
+    padding: 10px;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    width: 100%;
+}
+
+#carousel img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#carousel-pagination {
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+}
+
+#carousel-pagination ul {
+    list-style-type: none;
+    -webkit-padding-start: 0;
+    -webkit-margin-after: 0;
+    -webkit-margin-before: 0;
+}
+
+#carousel-pagination-items li {
+    border: 0;
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    background: rgba(0, 0, 0, .3);
+    margin: 0 12px;
+    cursor: pointer;
+    display: inline-block;
+}
+
+#carousel-pagination-items li.active-circle {
+    background: rgba(0, 0, 0, .75);
+}
+
+#carousel ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    position: relative;
+    transition: transform 250ms ease-in;
+}
+
+#carousel ul li {
+    padding: 20px;
+    float: left;
+    font-size: 40px;
+}
+
+.button-group button {
+    padding: 6px 10px;
+    margin-bottom: 8px;
+}
+
+.carousel__button--left img,
+.carousel__button--right img {
+    width: 30px;
+}
+
+.carousel__button--left {
+    left: -11%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+}
+
+.carousel__button--right {
+    right: -11%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+}
+
+
+/* End Carousel Styles */
+
+.aboutMe {
+    margin-bottom: 4%;
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    align-items: center;
+}
+
+.aboutMe p {
+    width: 60%;
+    margin: 2%;
+    text-align: center;
+    font-size: xx-large;
+}
+
+.social {
+    margin-left: -15px;
+    bottom: 0;
+    width: 100%;
+    height: 40px;
+    justify-content: center;
+    align-items: center;
+    color: var(--accentColor);
+    display: flex;
+}
+
+
+/* Begin Resume Button */
+
+.resBtn {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    font-size: xx-large;
+}
+
+.resBtn a {
+    color: black;
+}
+
+.resBtn button {
+    background-color: var(--light);
+}
+
+
+/* End Resume Button */
+
+
+/* Begin Contact Styles */
+
+.ContactMe {
+    display: grid;
+    text-align: left;
+    bottom: 0;
+    margin: 40px 0;
+    white-space: pre;
+    width: 50%;
+}
+
+.contactMeFor {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: xxx-large;
+}
+
+.ContactMe h2 {
+    margin: 0 6%;
+}
+
+.CM {
+    margin-top: 5%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+
+/* Begin Form Styles */
+
+form {
+    margin: 0 5%;
+    width: 100%;
+    padding: 10px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    white-space: pre;
+}
+
+label {
+    display: inline-block;
+    width: 100px;
+}
+
+button {
+    margin: 10px 10px 10px 0px;
+    height: 40px;
+    width: 120px;
+    background-color: #4F4846;
+    color: #FDF8F5;
+}
+
+input {
+    border: 5px solid black;
+    height: 30px;
+}
+
+textarea {
+    resize: vertical;
+    border: 5px solid black;
+}
+
+
+/* End Form Styles */
+
+
+/* End Contact Styles */

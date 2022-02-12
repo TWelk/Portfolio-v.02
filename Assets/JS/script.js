@@ -1,70 +1,87 @@
 // This is the eventlistener for developer card to flip
 const card = document.querySelector(".card__inner")
 
-card.addEventListener("click", function () {
+card.addEventListener("click", function() {
     card.classList.toggle("is-flipped")
 })
 
-// This is where the carousel function starts
-const track = document.querySelector(".carousel__track")
-const slides = Array.from(track.children)
-const nextBtn = document.querySelector(".carousel__button--right")
-const prevBtn = document.querySelector(".carousel__button--left")
-const dotNav = document.querySelector(".carousel__nav")
-const dots = Array.from(dotNav.children)
-const slidSize = slides[0].getBoundingClientRect().width
-const currentSlide = track.querySelector(".current-slide")
-const currentDot = dotNav.querySelector(".current-slide")
+const slideShow = document.querySelector(".slideShow")
+var carousel = document.getElementById('carousel'),
+    pics = ["./Assets/Images/Anonymous Alcoholics.jpg", "./Assets/Images/WeatherDashboard.jpg", "./Assets/Images/CodeQuiz.jpg", "./Assets/Images/RockPaperScissors.jpg", "./Assets/Images/PassGen.jpg"],
+    items = ['https://grdnd.github.io/group-project', 'https://twelk.github.io/WeatherDashboard/', 'https://twelk.github.io/CodeQuiz/', 'https://twelk.github.io/rpsproject', 'https://twelk.github.io/PassGen-v.02'];
+nextbtn = document.getElementById('nextButton'),
+    prevbtn = document.getElementById('prevButton'),
+    paginator = document.getElementById('carousel-pagination'),
+    pageCounter = 0;
 
-//Arrange slides side by side
-const setSlidePostition = (slide, index) => {
-    slides.style.left = slideWidth * index + "px"
-}
+function makeList(arr, arr2) {
+    var list = document.createElement('ul'),
+        pager = document.createElement('ul'),
+        itemCount = arr.length;
 
-slides.forEach(setSlidePostition)
+    for (var i = 0; i < itemCount; i++) {
+        var link = document.createElement('a'),
+            item = document.createElement('img'),
+            circle = document.createElement('li');
+        link.href = arr[i];
+        item.src = arr2[i]
+        link.appendChild(item)
+        list.appendChild(link);
+        pager.appendChild(circle);
 
-const moveToSlide = (track, currentSlide, targetSlide) => {
-    track.style.transform = "translateX(-" + targetSlide.style.left + ")"
-    currentSlide.classList.remove("current-slide")
-    targetSlide.classList.add("current-slide")
-}
-
-const updateDots = (currentDot, targetDot) => {
-    currentDot.classList.remove("current-slide")
-    targetDot.classList.add("current-slide")
-}
-
-//Move to left
-prevBtn.addEventListener("click", e => {
-    const prevSlide = currentSlide.previousElementSibling
-    const prevDot = currentDot.previousElementSibling
-    moveToSlide = (track, currentSlide, prevSlide)
-    updateDots = (currentDot, prevDot)
-})
-
-//Move to right
-nextBtn.addEventListener("click", e => {
-    const nextSlide = currentSlide.nextElementSibling
-    const nextDot = currentDot.nextElementSibling
-    moveToSlide = (track, currentSlide, nextSlide)
-    updateDots = (currentDot, nextDot)
-})
-
-//Move to slide
-dotNav.addEventListener("click", e => {
-    const targetDot = e.target.closest("button")
-
-    if (!targetDot) return
-
-    const targetIndex = dots.findIndex(dot => dot === targetDot)
-    const targetSlide = slides[targetIndex]
-
-    moveToSlide = (track, currentSlide, targetSlide)
-    updateDots = (currentDot, targetDot)
-})
-
-function loopProjects() {
-    if (targetSlide === null) {
-        //https://www.youtube.com/watch?v=gBzsE0oieio
+        paginator.appendChild(pager);
     }
+    list.setAttribute('id', 'carousel-items');
+    pager.setAttribute('id', 'carousel-pagination-items');
+    pager.childNodes[0].classList.add('active-circle');
+
+    return list;
 }
+carousel.appendChild(makeList(items, pics));
+
+function nextSlide() {
+    var listItems = document.getElementById('carousel-items'),
+        firstItem = listItems.childNodes[0],
+        pageList = document.getElementById('carousel-pagination-items');
+    console.log(listItems)
+    console.log(firstItem)
+    console.log(pageList)
+    listItems.insertBefore(firstItem, listItems.lastChild.nextSibling);
+
+    // change to next pagination circle
+    pageList.childNodes[pageCounter].classList.remove('active-circle');
+    pageCounter++;
+    if (pageCounter > items.length - 1) {
+        pageCounter = 0;
+    }
+    pageList.childNodes[pageCounter].classList.add('active-circle');
+
+}
+
+function prevSlide() {
+    var listItems = document.getElementById('carousel-items');
+    var lastItem = listItems.lastChild,
+        pageList = document.getElementById('carousel-pagination-items');
+    listItems.insertBefore(lastItem, listItems.childNodes[0]);
+
+    // change to next pagination circle
+    pageList.childNodes[pageCounter].classList.remove('active-circle');
+    pageCounter--;
+    if (pageCounter < 0) {
+        pageCounter = items.length - 1;
+    }
+    pageList.childNodes[pageCounter].classList.add('active-circle');
+}
+
+// add button events for next and previous
+nextbtn.addEventListener('click', nextSlide, false);
+prevbtn.addEventListener('click', prevSlide, false);
+
+setInterval(function() {
+        if (slideShow.matches(':hover')) {
+            clearInterval()
+        } else {
+            nextSlide()
+        }
+    },
+    3000);

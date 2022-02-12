@@ -6,54 +6,132 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Protfolio Version 2</title>
-    <link rel="stylesheet" href="./Assets/CSS/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./Assets/CSS/styles.css">
 </head>
 
 <body>
-
-    <div class="card">
-        <div class="card__inner">
-            <div class="card__face card__face--front">
-                <h2>Developer Card</h2>
+    <header>
+        <nav class="navbar">
+            <div class="myLinks">
+                <a href="https://twelk.github.io/prework-about-me/">More About Me</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
             </div>
+        </nav>
+    </header>
 
-            <div class="card__face card__face--back">
-                <div class="card__content">
-                    <div class="card__header">
-                        <img src="" alt="" class="pofilePic" />
-                        <h2>Tyler Welker</h2>
+    <section class="aboutMe">
+        <div class="card">
+            <div class="card__inner">
+                <div class="card__face card__face--front">
+                    <div class="card__content">
+                        <div class="card__header">
+                            <img src="./Assets/Images/JPEG_20200201_222353.jpg" alt="" class="profilePic" />
+                            <h2>Tyler Welker</h2>
+                            <section class="social">
+                                <p><a href="https://www.linkedin.com/in/tyler-welker-b5551847/" target="_blank"><i class="fa fa-fw fa-linkedin-square"></i></a></p>
+                                <p><a href="https://github.com/TWelk" target="_blank"><i class="fa fa-fw fa-github"></i></a></p>
+                                <p><a href="https://twitter.com/TylerWelker11" target="_blank"><i class="fa fa-fw fa-twitter"></i></a></p>
+                            </section>
+                        </div>
+                        <div class="card__body">
+                            <h3>JavaScript Wizard</h3>
+                            <p>Type Paragraph here</p>
+                        </div>
                     </div>
+                </div>
 
-                    <div class="card__body">
-                        <h3>JavaScript Wizard</h3>
-                        <p>Type Paragraph here</p>
+                <div class="card__face card__face--back">
+                    <div class="card__content">
+                        <div class="card__header-back">
+                            <section class="resBtn">
+                                <button type="button"><a href="./Tyler Welker - Resume.pdf">Résumé</a></button>
+                            </section>
+                            <h1 class="skillHeader">SKILLS:</h1>
+                        </div>
+                        <div class="cards">
+                            <div class="skills">
+                                <h6>Database Applications</h6>
+                                <small>Develops and maintains databases.</small>
+                            </div>
+
+                            <div class="skills">
+                                <h6>Process Improvement</h6>
+                                <small>Develops and updates operating procedures to facilitate smooth functioning of data
+                                    processing operations.</small>
+                            </div>
+
+                            <div class="skills">
+                                <h6>IT Customer Support</h6>
+                                <small>Assist with fixing software issues.</small>
+                            </div>
+
+                            <div class="skills">
+                                <h6>PC Hardware and Diagnostics</h6>
+                                <small>Troubleshoot and ensures that computer equipment is maintained and in proper working order.</small>
+                            </div>
+
+                            <div class="skills">
+                                <h6>Problem Solving</h6>
+                                <small>Consults with appropriate management to ensure resolution of issues.</small>
+                            </div>
+
+                            <div class="skills">
+                                <h6>Teamwork</h6>
+                                <small>Capable of working in both small and large groups and coordinating the workflow to ensure accurate and timely completion of projects</small>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </div>
         </div>
+
+        <p>Full Stack Web Developer entering the Web Engineer industry, looking to work with teams on building new and innovative applications.</p>
+    </section>
+
+    <h1 id="projects">Projects</h1>
+    <div class="container">
+        <button class="carousel__button--left" type="button" id="prevButton"><img src="./Assets/Images/left.png" alt="Left Button"></button>
+        <div id="carousel" class="slideShow">
+            <!-- generated in js -->
+        </div>
+        <button class="carousel__button--right" type="button" id="nextButton"><img src="./Assets/Images/right.png " alt="Right Button "></button>
+        <div id="carousel-pagination">
+            <!-- generated in js -->
+        </div>
+        <!-- <div class="button-group"> -->
+
+        <!-- </div> -->
     </div>
 
-    <div class="carousel">
-        <button class="carousel__button carousel__button--left"><img src="" alt="Left Button"></button>
+    <div class="CM">
+        <div class="ContactMe" id="contact">
+            <h2>Contact Me</h2>
 
-        <div class="carousel__track_container">
-            <ul class="carousel__track">
-                <li class="carousel__slide current-slide"><img class="carousel___image" src="" alt="">Project1</li>
-                <li class="carousel__slide"><img class="carousel___image" src="" alt="">Project2</li>
-                <li class="carousel__slide"><img class="carousel___image" src="" alt="">Project3</li>
-            </ul>
+            <form>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="user-name" placeholder="Marry Samsonight">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="user-email" placeholder="MSamsonight@gmail.com">
+                <label for="message">Phone Number:</label>
+                <input type="tel" id="phone" name="user-phone" placeholder="1-555-867-5309" pattern="1[0-9]{3}[0-9]{3}[0-9]{4}">
+                <label for="message">Message:</label>
+                <textarea name="Message" id="MsgBox" cols="30" rows="10"></textarea>
+                <button type="submit">SEND</button>
+            </form>
         </div>
 
-        <button class="carousel__button carousel__button--right"><img src="" alt="Right Button"></button>
-
-        <div class="carousel__nav">
-            <button class="carousel__indicator current-slide"></button>
-            <button class="carousel__indicator"></button>
-            <button class="carousel__indicator"></button>
+        <div class="contactMeFor">
+            <span>Employment</span>
+            <span>Freelance</span>
+            <span>Consulting</span>
         </div>
+
     </div>
 
-    <script src="./Assets/JS/script.js"></script>
+    <script src="./Assets/JS/script.js "></script>
 </body>
 
 </html>
