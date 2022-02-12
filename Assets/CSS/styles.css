@@ -441,3 +441,20 @@ textarea {
 
 
 /* End Contact Styles */
+
+
+/* Begin Footer Stylers */
+
+footer {
+    bottom: 0;
+    width: 100%;
+    height: 40px;
+    justify-content: center;
+    align-items: center;
+    background-color: #7c808d;
+    color: var(--accentColor);
+    display: flex;
+}
+
+
+/* End Footer Stylers */
