@@ -31,7 +31,7 @@ body {
     background-color: var(--headFoot);
     overflow: auto;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     width: 100%;
     top: 0;
 }
