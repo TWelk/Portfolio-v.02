@@ -81,6 +81,13 @@ body {
     color: var(--dark);
 }
 
+.businessCard {
+    width: 400px;
+    height: 200px;
+    perspective: 1000px;
+    color: var(--dark);
+}
+
 .card__inner {
     width: 100%;
     height: 100%;
@@ -89,7 +96,19 @@ body {
     position: relative;
 }
 
+.businessCard__inner {
+    width: 100%;
+    height: 100%;
+    transition: transform 1s;
+    transform-style: preserve-3d;
+    position: relative;
+}
+
 .card__inner.is-flipped {
+    transform: rotateY(180deg);
+}
+
+.businessCard__inner.is-flipped {
     transform: rotateY(180deg);
 }
 
@@ -131,9 +150,27 @@ body {
     padding: 30px 30px 40px;
 }
 
+.businessCard__header {
+    /* position: relative;
+    padding: 30px 30px 40px; */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
 .card__header-back {
     position: relative;
     padding-top: 30px;
+}
+
+.businessCard__header-back {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 20px;
+    margin-left: 10px;
 }
 
 .card__header-back::after {
@@ -154,6 +191,17 @@ body {
     width: 128px;
     height: 128px;
     margin: 0 auto 30px;
+    border-radius: 50%;
+    background-color: #fff;
+    border: 5px solid #fff;
+    object-fit: cover;
+}
+
+.profilePic2 {
+    display: block;
+    width: 128px;
+    height: 128px;
+    margin: 30px 50px;
     border-radius: 50%;
     background-color: #fff;
     border: 5px solid #fff;
@@ -181,7 +229,7 @@ body {
 
 .cards {
     width: 100%;
-    height: 30%;
+    /* height: 30%; */
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -408,7 +456,7 @@ body {
     display: grid;
     text-align: left;
     bottom: 0;
-    margin: 40px 0;
+    margin: 40px 0 40px 2%;
     white-space: pre;
     width: 50%;
 }
@@ -419,11 +467,7 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    font-size: xxx-large;
-}
-
-.ContactMe h2 {
-    margin: 0 6%;
+    /* font-size: xxx-large; */
 }
 
 .CM {
@@ -437,9 +481,8 @@ body {
 /* Begin Form Styles */
 
 form {
-    margin: 0 5%;
     width: 100%;
-    padding: 10px;
+    padding: 10px 0 10px 10px;
     border-radius: 20px;
     display: flex;
     flex-direction: column;

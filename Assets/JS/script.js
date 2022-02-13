@@ -1,15 +1,20 @@
 // This is the eventlistener for developer card to flip
 const card = document.querySelector(".card__inner")
 const cardMore = document.querySelector(".more")
+const cardBack = document.querySelector(".back")
+const bCard = document.querySelector(".businessCard__inner")
 
 cardMore.addEventListener("click", function() {
     card.classList.toggle("is-flipped")
 })
 
-const cardBack = document.querySelector(".back")
 
 cardBack.addEventListener("click", function() {
     card.classList.toggle("is-flipped")
+})
+
+bCard.addEventListener("click", function() {
+    bCard.classList.toggle("is-flipped")
 })
 
 const slideShow = document.querySelector(".slideShow")
