@@ -5,6 +5,7 @@
     --secondary: #fe4880;
     --dark: #212121;
     --light: rgba(209, 206, 206, 0.733);
+    --headFoot: #7c808d;
 }
 
 * {
@@ -16,6 +17,8 @@ body {
     font-family: sans-serif;
     width: 100%;
     min-height: 100vh;
+    background-color: var(--dark);
+    color: var(--primary);
 }
 
 
@@ -25,7 +28,7 @@ body {
 /* Navbar Styles */
 
 .navbar {
-    background-color: #7c808d;
+    background-color: var(--headFoot);
     overflow: auto;
     display: flex;
     justify-content: space-between;
@@ -37,7 +40,7 @@ body {
     float: left;
     text-align: center;
     padding: 12px;
-    color: white;
+    color: var(--primary);
     text-decoration: underline;
     font-size: 17px;
 }
@@ -71,10 +74,11 @@ body {
 /* Begin Card Styles */
 
 .card {
-    margin: 10px auto 0 20px;
+    margin: 20px auto 0 20px;
     width: 600px;
     height: 800px;
     perspective: 1000px;
+    color: var(--dark);
 }
 
 .card__inner {
@@ -82,7 +86,6 @@ body {
     height: 100%;
     transition: transform 1s;
     transform-style: preserve-3d;
-    cursor: pointer;
     position: relative;
 }
 
@@ -180,7 +183,37 @@ body {
     width: 100%;
     height: 30%;
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
+}
+
+.education {
+    display: flex;
+    flex-direction: column;
+    padding: 30px 10px;
+    margin: 2%;
+    text-align: center;
+    box-shadow: 12px 12px 2px 1px rgb(20 20 22 / 20%);
+    background: #fff;
+    align-items: center;
+}
+
+.education h6 {
+    font-size: small;
+    display: flex;
+    height: initial;
+    text-align: center;
+    align-items: center;
+    word-wrap: normal;
+    margin: 1%;
+}
+
+.more,
+.back {
+    display: flex;
+    justify-content: center;
+    margin-top: 2%;
+    cursor: pointer;
 }
 
 .skills {
@@ -263,14 +296,14 @@ body {
     border-radius: 50%;
     width: 15px;
     height: 15px;
-    background: rgba(0, 0, 0, .3);
+    background: var(--primary);
     margin: 0 12px;
     cursor: pointer;
     display: inline-block;
 }
 
 #carousel-pagination-items li.active-circle {
-    background: rgba(0, 0, 0, .75);
+    background: var(--secondary)
 }
 
 #carousel ul {
@@ -337,6 +370,7 @@ body {
 
 .social {
     margin-left: -15px;
+    margin-top: 2%;
     bottom: 0;
     width: 100%;
     height: 40px;
@@ -451,7 +485,7 @@ footer {
     height: 40px;
     justify-content: center;
     align-items: center;
-    background-color: #7c808d;
+    background-color: var(--headFoot);
     color: var(--accentColor);
     display: flex;
 }

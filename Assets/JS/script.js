@@ -1,7 +1,14 @@
 // This is the eventlistener for developer card to flip
 const card = document.querySelector(".card__inner")
+const cardMore = document.querySelector(".more")
 
-card.addEventListener("click", function() {
+cardMore.addEventListener("click", function() {
+    card.classList.toggle("is-flipped")
+})
+
+const cardBack = document.querySelector(".back")
+
+cardBack.addEventListener("click", function() {
     card.classList.toggle("is-flipped")
 })
 
