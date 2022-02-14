@@ -95,7 +95,7 @@ setInterval(function() {
             nextSlide()
         }
     },
-    3000);
+    30000);
 
 resume.addEventListener("click", function() {
      document.location.href = "./Tyler Welker - Resume.pdf"
