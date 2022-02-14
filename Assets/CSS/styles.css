@@ -383,15 +383,7 @@
             cursor: pointer;
         }
 
-        .unfocus:focus,
-        #prevButton:focus,
-        #nextButton:focus,
-        .container:focus,
-        #carousel:focus,
-        #carousel-items:focus,
-        .slideShow:focus,
-        .carousel__button--right:focus,
-        .carousel__button--left:focus {
+        .unfocus {
               outline: none;
         }
         /* End Carousel Styles */
