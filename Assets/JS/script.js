@@ -89,6 +89,8 @@ prevbtn.addEventListener('click', prevSlide, false);
 setInterval(function() {
         if (slideShow.matches(':hover')) {
             clearInterval()
+        } else {
+            nextSlide()
         }
     },
     3000);
