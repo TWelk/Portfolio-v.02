@@ -371,6 +371,7 @@
             background: transparent;
             border: 0;
             cursor: pointer;
+            outline: none;
         }
         
         .carousel__button--right {
@@ -381,6 +382,7 @@
             background: transparent;
             border: 0;
             cursor: pointer;
+            outline: none;
         }
         /* End Carousel Styles */
         
