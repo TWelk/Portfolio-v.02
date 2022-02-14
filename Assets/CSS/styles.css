@@ -383,9 +383,12 @@
             cursor: pointer;
         }
 
-        .carousel__button--right:focus,  
-        #carousel-pagination-items li:focus, 
-        #carousel ul:focus,
+          
+        .container:focus,
+        #carousel:focus,
+        #carousel-items:focus,
+        .slideShow:focus,
+        .carousel__button--right:focus,
         .carousel__button--left:focus {
                 outline: none;
         }
