@@ -384,6 +384,11 @@
             cursor: pointer;
             outline: none;
         }
+
+        .carousel__button--right:focus, 
+        .carousel__button--left:focus {
+                outline: none;
+        }
         /* End Carousel Styles */
         
         .aboutMe {
