@@ -339,7 +339,7 @@
         #carousel-pagination-items li.active-circle {
             background: var(--secondary)
         }
-        
+         
         #carousel ul {
             height: 600px;
             padding: 0;
@@ -383,7 +383,9 @@
             cursor: pointer;
         }
 
-        .carousel__button--right:focus, 
+        .carousel__button--right:focus,  
+        #carousel-pagination-items li:focus, 
+        #carousel ul:focus,
         .carousel__button--left:focus {
                 outline: none;
         }
