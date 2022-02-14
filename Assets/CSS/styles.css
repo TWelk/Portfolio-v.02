@@ -383,6 +383,7 @@
             cursor: pointer;
         }
 
+        .unfocus:focus,
         #prevButton:focus,
         #nextButton:focus,
         .container:focus,
