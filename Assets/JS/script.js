@@ -55,9 +55,6 @@ function nextSlide() {
     var listItems = document.getElementById('carousel-items'),
         firstItem = listItems.childNodes[0],
         pageList = document.getElementById('carousel-pagination-items');
-    console.log(listItems)
-    console.log(firstItem)
-    console.log(pageList)
     listItems.insertBefore(firstItem, listItems.lastChild.nextSibling);
 
     // change to next pagination circle
