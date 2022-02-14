@@ -36,6 +36,7 @@ function makeList(arr, arr2) {
         var link = document.createElement('a'),
             item = document.createElement('img'),
             circle = document.createElement('li');
+        link.classList.add("unfocus")
         link.href = arr[i];
         item.src = arr2[i]
         link.appendChild(item)
