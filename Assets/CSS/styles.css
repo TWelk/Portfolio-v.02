@@ -1,538 +1,615 @@
-/* Begin Global Styles */
-
-:root {
-    --primary: #ffce00;
-    --secondary: #fe4880;
-    --dark: #212121;
-    --light: rgba(209, 206, 206, 0.733);
-    --headFoot: #7c808d;
-}
-
-* {
-    margin: 0;
-    padding: 0;
-}
-
-body {
-    font-family: sans-serif;
-    width: 100%;
-    min-height: 100vh;
-    background-color: var(--dark);
-    color: var(--primary);
-}
-
-
-/* End Global Styles */
-
-
-/* Navbar Styles */
-
-.navbar {
-    background-color: var(--headFoot);
-    overflow: auto;
-    display: flex;
-    justify-content: flex-end;
-    width: 100%;
-    top: 0;
-}
-
-.navbar a {
-    float: left;
-    text-align: center;
-    padding: 12px;
-    color: var(--primary);
-    text-decoration: underline;
-    font-size: 17px;
-}
-
-
-/* Navbar links on mouse-over */
-
-.navbar a:hover {
-    background-color: #000;
-}
-
-
-/* Current/active navbar link */
-
-.active {
-    background-color: #7CA5B8;
-}
-
-.name {
-    display: flex;
-    justify-self: flex-start;
-    align-items: center;
-    margin-left: 5%;
-    font-size: x-large;
-}
-
-
-/* End Navbar Styles*/
-
-
-/* Begin Card Styles */
-
-.card {
-    margin: 20px auto 0 20px;
-    width: 600px;
-    height: 800px;
-    perspective: 1000px;
-    color: var(--dark);
-}
-
-.businessCard {
-    width: 400px;
-    height: 200px;
-    perspective: 1000px;
-    color: var(--dark);
-}
-
-.card__inner {
-    width: 100%;
-    height: 100%;
-    transition: transform 1s;
-    transform-style: preserve-3d;
-    position: relative;
-}
-
-.businessCard__inner {
-    width: 100%;
-    height: 100%;
-    transition: transform 1s;
-    transform-style: preserve-3d;
-    position: relative;
-}
-
-.card__inner.is-flipped {
-    transform: rotateY(180deg);
-}
-
-.businessCard__inner.is-flipped {
-    transform: rotateY(180deg);
-}
-
-.card__face {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
-    overflow: hidden;
-    border-radius: 16px;
-    box-shadow: 0px 3px 18px 3px rgba(0, 0, 0, 0.2);
-}
-
-.card__face--front {
-    background-image: linear-gradient(to bottom right, var(--primary), var(--secondary));
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.card__face--front h2 {
-    color: #fff;
-    font-size: 32px;
-}
-
-.card__face--back {
-    background-color: var(--light);
-    transform: rotateY(180deg);
-}
-
-.card__content {
-    width: 100%;
-    height: 100%;
-}
-
-.card__header {
-    position: relative;
-    padding: 30px 30px 40px;
-}
-
-.businessCard__header {
-    /* position: relative;
-    padding: 30px 30px 40px; */
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    align-content: center;
-}
-
-.card__header-back {
-    position: relative;
-    padding-top: 30px;
-}
-
-.businessCard__header-back {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin-top: 20px;
-    margin-left: 10px;
-}
-
-.card__header-back::after {
-    content: "";
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: -1;
-    border-radius: 0 0 50% 0;
-    background-image: linear-gradient(to bottom left, var(--primary)10%, var(--secondary)115%);
-}
-
-.profilePic {
-    display: block;
-    width: 128px;
-    height: 128px;
-    margin: 0 auto 30px;
-    border-radius: 50%;
-    background-color: #fff;
-    border: 5px solid #fff;
-    object-fit: cover;
-}
-
-.profilePic2 {
-    display: block;
-    width: 128px;
-    height: 128px;
-    margin: 30px 50px;
-    border-radius: 50%;
-    background-color: #fff;
-    border: 5px solid #fff;
-    object-fit: cover;
-}
-
-.card__header h2 {
-    margin-bottom: 2%;
-    color: #fff;
-    font-size: 32px;
-    font-weight: 900;
-    text-transform: uppercase;
-    text-align: center;
-}
-
-.skillHeader {
-    margin-left: 2%;
-}
-
-
-/* End Card Styles */
-
-
-/* Begin Expertise Card Styles */
-
-.cards {
-    width: 100%;
-    /* height: 30%; */
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
-.education {
-    display: flex;
-    flex-direction: column;
-    padding: 30px 10px;
-    margin: 2%;
-    text-align: center;
-    box-shadow: 12px 12px 2px 1px rgb(20 20 22 / 20%);
-    background: #fff;
-    align-items: center;
-}
-
-.education h6 {
-    font-size: small;
-    display: flex;
-    height: initial;
-    text-align: center;
-    align-items: center;
-    word-wrap: normal;
-    margin: 1%;
-}
-
-.more,
-.back {
-    display: flex;
-    justify-content: center;
-    margin-top: 2%;
-    cursor: pointer;
-}
-
-.skills {
-    display: flex;
-    flex-direction: column;
-    width: 40%;
-    height: initial;
-    padding: 30px 10px;
-    margin: 2%;
-    text-align: center;
-    box-shadow: 12px 12px 2px 1px rgba(20, 20, 22, 0.2);
-    background: #fff;
-    align-items: center;
-}
-
-.skills h6 {
-    font-size: small;
-    display: flex;
-    flex-direction: column;
-    width: 5%;
-    height: initial;
-    margin: 2%;
-    text-align: center;
-    align-items: center;
-    word-wrap: normal;
-}
-
-.skills small {
-    padding-top: 10px;
-    display: block;
-}
-
-
-/* End Expertise Card Styles */
-
-#projects {
-    text-align: center;
-}
-
-
-/* Begin Carousel Styles */
-
-.container {
-    position: relative;
-    height: 600px;
-    width: 50%;
-    margin: 0 auto;
-}
-
-#carousel {
-    margin: 10px;
-    height: 100%;
-    /* position: relative; */
-    overflow: hidden;
-    text-align: center;
-    /* width: 100%; */
-}
-
-#carousel img {
-    /* width: 100%; */
-    height: 100%;
-    object-fit: cover;
-}
-
-#carousel-pagination {
-    display: flex;
-    justify-content: center;
-    padding: 10px 0;
-}
-
-#carousel-pagination ul {
-    list-style-type: none;
-    -webkit-padding-start: 0;
-    -webkit-margin-after: 0;
-    -webkit-margin-before: 0;
-}
-
-#carousel-pagination-items li {
-    border: 0;
-    border-radius: 50%;
-    width: 15px;
-    height: 15px;
-    background: var(--primary);
-    margin: 0 12px;
-    cursor: pointer;
-    display: inline-block;
-}
-
-#carousel-pagination-items li.active-circle {
-    background: var(--secondary)
-}
-
-#carousel ul {
-    height: 600px;
-    padding: 0;
-    margin: 0;
-    list-style: none;
-    /* position: relative;
-    transition: transform 250ms ease-in; */
-}
-
-#carousel ul li {
-    padding: 20px;
-    float: left;
-    font-size: 40px;
-}
-
-.button-group button {
-    padding: 6px 10px;
-    margin-bottom: 8px;
-}
-
-.carousel__button--left img,
-.carousel__button--right img {
-    width: 30px;
-}
-
-.carousel__button--left {
-    left: -11%;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: transparent;
-    border: 0;
-    cursor: pointer;
-}
-
-.carousel__button--right {
-    right: -11%;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: transparent;
-    border: 0;
-    cursor: pointer;
-}
-
-
-/* End Carousel Styles */
-
-.aboutMe {
-    margin-bottom: 4%;
-    display: flex;
-    flex-direction: row;
-    align-content: center;
-    align-items: center;
-}
-
-.aboutMe p {
-    width: 60%;
-    margin: 2%;
-    text-align: center;
-    font-size: xx-large;
-}
-
-.social {
-    margin-left: -15px;
-    margin-top: 2%;
-    bottom: 0;
-    width: 100%;
-    height: 40px;
-    justify-content: center;
-    align-items: center;
-    color: var(--accentColor);
-    display: flex;
-}
-
-
-/* Begin Resume Button */
-
-.resBtn {
-    display: flex;
-    justify-content: center;
-    margin-top: 30px;
-    font-size: xx-large;
-}
-
-.resBtn a {
-    color: black;
-}
-
-.resBtn button {
-    background-color: var(--light);
-}
-
-
-/* End Resume Button */
-
-
-/* Begin Contact Styles */
-
-.ContactMe {
-    display: grid;
-    text-align: left;
-    bottom: 0;
-    margin: 40px 0 40px 2%;
-    white-space: pre;
-    width: 50%;
-}
-
-.contactMeFor {
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    /* font-size: xxx-large; */
-}
-
-.CM {
-    margin-top: 5%;
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-}
-
-
-/* Begin Form Styles */
-
-form {
-    width: 100%;
-    padding: 10px 0 10px 10px;
-    border-radius: 20px;
-    display: flex;
-    flex-direction: column;
-    text-align: left;
-    white-space: pre;
-}
-
-label {
-    display: inline-block;
-    width: 100px;
-}
-
-button {
-    margin: 10px 10px 10px 0px;
-    height: 40px;
-    width: 120px;
-    background-color: #4F4846;
-    color: #FDF8F5;
-}
-
-input {
-    border: 5px solid black;
-    height: 30px;
-}
-
-textarea {
-    resize: vertical;
-    border: 5px solid black;
-}
-
-
-/* End Form Styles */
-
-
-/* End Contact Styles */
-
-
-/* Begin Footer Stylers */
-
-footer {
-    bottom: 0;
-    width: 100%;
-    height: 40px;
-    justify-content: center;
-    align-items: center;
-    background-color: var(--headFoot);
-    color: var(--accentColor);
-    display: flex;
-}
-
-
-/* End Footer Stylers */
+        /* Begin Global Styles */
+        
+         :root {
+            --primary: #ffce00;
+            --secondary: #fe4880;
+            --dark: #212121;
+            --light: rgba(209, 206, 206, 0.733);
+            --headFoot: #7c808d;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: sans-serif;
+            width: 100%;
+            min-height: 100vh;
+            background-color: var(--dark);
+            color: var(--primary);
+        }
+        /* End Global Styles */
+        /* Navbar Styles */
+        
+        .navbar {
+            background-color: var(--headFoot);
+            overflow: auto;
+            display: flex;
+            justify-content: flex-end;
+            width: 100%;
+            top: 0;
+        }
+        
+        .navbar a {
+            float: left;
+            text-align: center;
+            padding: 12px;
+            color: var(--primary);
+            text-decoration: underline;
+            font-size: 17px;
+        }
+        /* Navbar links on mouse-over */
+        
+        .navbar a:hover {
+            background-color: #000;
+        }
+        /* Current/active navbar link */
+        
+        .active {
+            background-color: #7CA5B8;
+        }
+        
+        .name {
+            display: flex;
+            justify-self: flex-start;
+            align-items: center;
+            margin-left: 5%;
+            font-size: x-large;
+        }
+        /* End Navbar Styles*/
+        /* Begin Card Styles */
+        
+        .card {
+            margin: 20px auto 0 20px;
+            width: 600px;
+            height: 800px;
+            perspective: 1000px;
+            color: var(--dark);
+        }
+        
+        .businessCard {
+            width: 400px;
+            height: 200px;
+            perspective: 1000px;
+            color: var(--dark);
+        }
+        
+        .card__inner {
+            width: 100%;
+            height: 100%;
+            transition: transform 1s;
+            transform-style: preserve-3d;
+            position: relative;
+        }
+        
+        .businessCard__inner {
+            width: 100%;
+            height: 100%;
+            transition: transform 1s;
+            transform-style: preserve-3d;
+            position: relative;
+        }
+        
+        .card__inner.is-flipped {
+            transform: rotateY(180deg);
+        }
+        
+        .businessCard__inner.is-flipped {
+            transform: rotateY(180deg);
+        }
+        
+        .card__face {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            overflow: hidden;
+            border-radius: 16px;
+            box-shadow: 0px 3px 18px 3px rgba(0, 0, 0, 0.2);
+        }
+        
+        .card__face--front {
+            background-image: linear-gradient(to bottom right, var(--primary), var(--secondary));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .businessCard__face--front {
+            background-image: linear-gradient(to bottom right, var(--primary), var(--secondary));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .card__face--front h2 {
+            color: #fff;
+            font-size: 32px;
+        }
+        
+        .businessCard__face--front h2 {
+            color: #fff;
+            font-size: 32px;
+        }
+        
+        .card__face--back {
+            background-color: var(--light);
+            transform: rotateY(180deg);
+        }
+        
+        .card__content {
+            width: 100%;
+            height: 100%;
+        }
+        
+        .card__header {
+            position: relative;
+            padding: 30px 30px 40px;
+        }
+        
+        .businessCard__header {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            align-content: center;
+        }
+        
+        .card__header-back {
+            position: relative;
+            padding-top: 30px;
+        }
+        
+        .businessCard__header-back {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            margin-top: 20px;
+            margin-left: 10px;
+        }
+        
+        .card__header-back::after {
+            content: "";
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: -1;
+            border-radius: 0 0 50% 0;
+            background-image: linear-gradient(to bottom left, var(--primary)10%, var(--secondary)115%);
+        }
+        
+        .profilePic {
+            display: block;
+            width: 128px;
+            height: 128px;
+            margin: 0 auto 30px;
+            border-radius: 50%;
+            background-color: #fff;
+            border: 5px solid #fff;
+            object-fit: cover;
+        }
+        
+        .profilePic2 {
+            display: block;
+            width: 128px;
+            height: 128px;
+            margin: 30px 50px;
+            border-radius: 50%;
+            background-color: #fff;
+            border: 5px solid #fff;
+            object-fit: cover;
+        }
+        
+        .card__header h2 {
+            margin-bottom: 2%;
+            color: #fff;
+            font-size: 32px;
+            font-weight: 900;
+            text-transform: uppercase;
+            text-align: center;
+        }
+        
+        .skillHeader {
+            margin-left: 2%;
+        }
+        /* End Card Styles */
+        /* Begin Expertise Card Styles */
+        
+        .cards {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .education {
+            display: flex;
+            flex-direction: column;
+            padding: 30px 10px;
+            margin: 2%;
+            text-align: center;
+            box-shadow: 12px 12px 2px 1px rgb(20 20 22 / 20%);
+            background: #fff;
+            align-items: center;
+        }
+        
+        .education h6 {
+            font-size: small;
+            display: flex;
+            height: initial;
+            text-align: center;
+            align-items: center;
+            word-wrap: normal;
+            margin: 1%;
+        }
+        
+        .more,
+        .back {
+            display: flex;
+            justify-content: center;
+            margin-top: 2%;
+            cursor: pointer;
+        }
+        
+        .skills {
+            display: flex;
+            flex-direction: column;
+            width: 40%;
+            height: initial;
+            padding: 30px 10px;
+            margin: 2%;
+            text-align: center;
+            box-shadow: 12px 12px 2px 1px rgba(20, 20, 22, 0.2);
+            background: #fff;
+            align-items: center;
+        }
+        
+        .skills h6 {
+            font-size: small;
+            display: flex;
+            flex-direction: column;
+            width: 5%;
+            height: initial;
+            margin: 2%;
+            text-align: center;
+            align-items: center;
+            word-wrap: normal;
+        }
+        
+        .skills small {
+            padding-top: 10px;
+            display: block;
+        }
+        /* End Expertise Card Styles */
+        
+        #projects {
+            text-align: center;
+        }
+        /* Begin Carousel Styles */
+        
+        .container {
+            position: relative;
+            height: 600px;
+            width: 50%;
+            margin: 0 auto;
+        }
+        
+        #carousel {
+            margin: 10px;
+            height: 100%;
+            overflow: hidden;
+            text-align: center;
+        }
+        
+        #carousel img {
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        #carousel-pagination {
+            display: flex;
+            justify-content: center;
+            padding: 10px 0;
+        }
+        
+        #carousel-pagination ul {
+            list-style-type: none;
+            -webkit-padding-start: 0;
+            -webkit-margin-after: 0;
+            -webkit-margin-before: 0;
+        }
+        
+        #carousel-pagination-items li {
+            border: 0;
+            border-radius: 50%;
+            width: 15px;
+            height: 15px;
+            background: var(--primary);
+            margin: 0 12px;
+            cursor: pointer;
+            display: inline-block;
+        }
+        
+        #carousel-pagination-items li.active-circle {
+            background: var(--secondary)
+        }
+        
+        #carousel ul {
+            height: 600px;
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+        
+        #carousel ul li {
+            padding: 20px;
+            float: left;
+            font-size: 40px;
+        }
+        
+        .button-group button {
+            padding: 6px 10px;
+            margin-bottom: 8px;
+        }
+        
+        .carousel__button--left img,
+        .carousel__button--right img {
+            width: 30px;
+        }
+        
+        .carousel__button--left {
+            left: -11%;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: transparent;
+            border: 0;
+            cursor: pointer;
+        }
+        
+        .carousel__button--right {
+            right: -11%;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: transparent;
+            border: 0;
+            cursor: pointer;
+        }
+        /* End Carousel Styles */
+        
+        .aboutMe {
+            margin-bottom: 4%;
+            display: flex;
+            flex-direction: row;
+            align-content: center;
+            align-items: center;
+        }
+        
+        .aboutMe p {
+            width: 60%;
+            margin: 2%;
+            text-align: center;
+            font-size: xx-large;
+        }
+        
+        .social {
+            margin-left: -15px;
+            margin-top: 2%;
+            bottom: 0;
+            width: 100%;
+            height: 40px;
+            justify-content: center;
+            align-items: center;
+            color: var(--accentColor);
+            display: flex;
+        }
+        /* Begin Resume Button */
+        
+        .resBtn {
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+            font-size: xx-large;
+        }
+        
+        .resBtn a {
+            color: black;
+        }
+        
+        .resBtn button {
+            background-color: var(--light);
+        }
+        /* End Resume Button */
+        /* Begin Contact Styles */
+        
+        .ContactMe {
+            display: grid;
+            text-align: left;
+            bottom: 0;
+            margin: 40px 0 40px 2%;
+            white-space: pre;
+            width: 50%;
+        }
+        
+        .contactMeFor {
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .CM {
+            margin-top: 5%;
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+        }
+        /* Begin Form Styles */
+        
+        form {
+            width: 100%;
+            padding: 10px 0 10px 10px;
+            border-radius: 20px;
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+            white-space: pre;
+        }
+        
+        label {
+            display: inline-block;
+            width: 100px;
+        }
+        
+        button {
+            margin: 10px 10px 10px 0px;
+            height: 40px;
+            width: 120px;
+            background-color: #4F4846;
+            color: #FDF8F5;
+        }
+        
+        input {
+            border: 5px solid black;
+            height: 30px;
+        }
+        
+        textarea {
+            resize: vertical;
+            border: 5px solid black;
+        }
+        /* End Form Styles */
+        /* End Contact Styles */
+        /* Begin Footer Stylers */
+        
+        footer {
+            bottom: 0;
+            width: 100%;
+            height: 40px;
+            justify-content: center;
+            align-items: center;
+            background-color: var(--headFoot);
+            color: var(--accentColor);
+            display: flex;
+        }
+        /* End Footer Stylers */
+        /* Begin Media Styles */
+        
+        @media screen and (max-width: 1000px) {
+            .container {
+                width: 90%;
+            }
+            .carousel__button--left {
+                left: -8%;
+            }
+            .carousel__button--right {
+                right: -9%;
+            }
+        }
+        
+        @media screen and (max-width: 900px) {
+            .container {
+                width: 100%;
+                margin: 0;
+            }
+            .carousel__button--left {
+                left: 0;
+            }
+            .carousel__button--right {
+                right: -1%;
+            }
+            .contactMeFor {
+                width: 60%;
+            }
+        }
+        
+        @media screen and (max-width: 856px) {
+            .aboutMe {
+                flex-direction: column;
+            }
+            .aboutMe p {
+                width: 100%;
+            }
+            .card {
+                margin: 30px 0 0 0;
+                display: flex;
+                justify-content: center;
+            }
+        }
+        
+        @media screen and (max-width: 855px) {
+            .CM {
+                flex-direction: column;
+                align-items: center;
+            }
+            .ContactMe {
+                width: 85%;
+            }
+            .contactMeFor {
+                width: 100%;
+                margin-bottom: 30px;
+            }
+        }
+        
+        @media screen and (max-width: 592px) {
+            .card {
+                width: 320px;
+                height: 640px;
+            }
+            .CM {
+                align-items: flex-start;
+            }
+            .card__face--front h2 {
+                color: #fff;
+                font-size: medium;
+            }
+            .card__header {
+                padding: 20px 0 0 0;
+            }
+            .card__header-back {
+                padding-top: 1px;
+            }
+            .resBtn {
+                margin: 0;
+            }
+            .button {
+                margin: 10px 10px 0px 0px;
+                height: 30px;
+                width: 100px;
+            }
+            .education {
+                padding: 0;
+            }
+            .social {
+                margin: 5% 0 5%;
+            }
+            .skills {
+                width: 45%;
+                padding: 10px 1px;
+            }
+            .back {
+                margin-top: 4%;
+            }
+            .businessCard {
+                width: 320px;
+            }
+            .profilePic2 {
+                margin: 30px 20px;
+            }
+            .businessCard__face--front h2 {
+                color: #fff;
+                font-size: 32px;
+            }
+            .aboutMe p {
+                margin-top: 6%;
+                font-size: large;
+            }
+        }
