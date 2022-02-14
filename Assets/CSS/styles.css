@@ -312,16 +312,16 @@ body {
 }
 
 #carousel {
-    padding: 10px;
+    margin: 10px;
     height: 100%;
-    position: relative;
+    /* position: relative; */
     overflow: hidden;
     text-align: center;
-    width: 100%;
+    /* width: 100%; */
 }
 
 #carousel img {
-    width: 100%;
+    /* width: 100%; */
     height: 100%;
     object-fit: cover;
 }
@@ -355,11 +355,12 @@ body {
 }
 
 #carousel ul {
+    height: 600px;
     padding: 0;
     margin: 0;
     list-style: none;
-    position: relative;
-    transition: transform 250ms ease-in;
+    /* position: relative;
+    transition: transform 250ms ease-in; */
 }
 
 #carousel ul li {

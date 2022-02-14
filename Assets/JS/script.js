@@ -89,11 +89,11 @@ function prevSlide() {
 nextbtn.addEventListener('click', nextSlide, false);
 prevbtn.addEventListener('click', prevSlide, false);
 
-setInterval(function() {
-        if (slideShow.matches(':hover')) {
-            clearInterval()
-        } else {
-            nextSlide()
-        }
-    },
-    3000);
+// setInterval(function() {
+//         if (slideShow.matches(':hover')) {
+//             clearInterval()
+//         } else {
+//             nextSlide()
+//         }
+//     },
+//     3000);
