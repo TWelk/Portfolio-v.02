@@ -4,7 +4,6 @@ const cardMore = document.querySelector(".more")
 const cardBack = document.querySelector(".back")
 const bCard = document.querySelector(".businessCard__inner")
 const resume = document.querySelector("#resLink")
-const resBtn = document.querySelector("#resTag")
 
 cardMore.addEventListener("click", function() {
     card.classList.toggle("is-flipped")
@@ -97,7 +96,6 @@ setInterval(function() {
     },
     3000);
 
-resume.addEventListener("click", (e) => {
-    e.preventDefault;
-    resBtn.href = "./Tyler Welker - Resume.pdf"
+resume.addEventListener("click", function() {
+     document.location.href = "./Tyler Welker - Resume.pdf"
 })
