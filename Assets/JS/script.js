@@ -36,7 +36,6 @@ function makeList(arr, arr2) {
         var link = document.createElement('a'),
             item = document.createElement('img'),
             circle = document.createElement('li');
-        link.classList.add("unfocus")
         link.href = arr[i];
         item.src = arr2[i]
         link.appendChild(item)
@@ -45,6 +44,7 @@ function makeList(arr, arr2) {
 
         paginator.appendChild(pager);
     }
+
     list.setAttribute('id', 'carousel-items');
     pager.setAttribute('id', 'carousel-pagination-items');
     pager.childNodes[0].classList.add('active-circle');
@@ -88,15 +88,6 @@ function prevSlide() {
 nextbtn.addEventListener('click', nextSlide, false);
 prevbtn.addEventListener('click', prevSlide, false);
 
-setInterval(function() {
-        if (slideShow.matches(':hover')) {
-            clearInterval()
-        } else {
-            nextSlide()
-        }
-    },
-    30000);
-
 resume.addEventListener("click", function() {
-     document.location.href = "./Tyler Welker - Resume.pdf"
+    document.location.href = "./Tyler Welker - Resume.pdf"
 })

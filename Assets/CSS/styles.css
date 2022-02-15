@@ -339,7 +339,7 @@
         #carousel-pagination-items li.active-circle {
             background: var(--secondary)
         }
-         
+        
         #carousel ul {
             height: 600px;
             padding: 0;
@@ -381,10 +381,6 @@
             background: transparent;
             border: 0;
             cursor: pointer;
-        }
-
-        .unfocus {
-              outline: none;
         }
         /* End Carousel Styles */
         
