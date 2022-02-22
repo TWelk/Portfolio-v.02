@@ -20,6 +20,10 @@
             background-color: var(--dark);
             color: var(--primary);
         }
+
+        h2 {
+            text-align: center;
+        }
         /* End Global Styles */
         /* Navbar Styles */
         
@@ -96,10 +100,6 @@
             transform: rotateY(180deg);
         }
         
-        .businessCard__inner.is-flipped {
-            transform: rotateY(180deg);
-        }
-        
         .card__face {
             position: absolute;
             width: 100%;
@@ -132,7 +132,7 @@
         
         .businessCard__face--front h2 {
             color: #fff;
-            font-size: 32px;
+            /* font-size: 32px; */
         }
         
         .card__face--back {
@@ -152,10 +152,10 @@
         
         .businessCard__header {
             display: flex;
-            flex-direction: row;
-            justify-content: center;
-            align-items: center;
-            align-content: center;
+            flex-direction: column;
+            align-items: flex-start;
+            font-size: medium;
+            margin: 40px 30px;
         }
         
         .card__header-back {
@@ -306,23 +306,34 @@
             overflow: hidden;
             text-align: center;
         }
+
+        #projectNames {
+            color: var(--primary);
+            margin: 5% 0;
+            font-size: xx-large;
+        }
         
         #carousel img {
             height: 100%;
             object-fit: cover;
         }
         
-        #carousel-pagination {
+        #carousel-pagination, .slideTiltes {
             display: flex;
             justify-content: center;
             padding: 10px 0;
         }
         
-        #carousel-pagination ul {
+        #carousel-pagination ul, .slideTiltes ul {
             list-style-type: none;
             -webkit-padding-start: 0;
             -webkit-margin-after: 0;
             -webkit-margin-before: 0;
+        }
+
+        #projectNames li {
+            display: none;
+            height: 15px;
         }
         
         #carousel-pagination-items li {
@@ -336,6 +347,10 @@
             display: inline-block;
         }
         
+        #projectNames li.active-circle {
+            display: block;
+        }
+
         #carousel-pagination-items li.active-circle {
             background: var(--secondary)
         }
@@ -398,6 +413,15 @@
             text-align: center;
             font-size: xx-large;
         }
+
+        #links {
+            margin-bottom: 2%;
+            color: #fff;
+            font-size: x-large;
+            font-weight: bold;
+            text-transform: uppercase;
+            text-align: center;
+        }
         
         .social {
             margin-left: -15px;
@@ -425,6 +449,8 @@
         
         .resBtn button {
             background-color: var(--light);
+            color: black;
+            cursor: pointer;
         }
         /* End Resume Button */
         /* Begin Contact Styles */
