@@ -127,7 +127,7 @@
         
         .card__face--front h2 {
             color: #fff;
-            font-size: 32px;
+            font-size: larger;
         }
         
         .businessCard__face--front h2 {
@@ -420,9 +420,9 @@
         }
         
         #links {
-            margin-bottom: 2%;
+            /* margin-bottom: 2%; */
             color: #fff;
-            font-size: x-large;
+            font-size: large;
             font-weight: bold;
             text-transform: uppercase;
             text-align: center;
