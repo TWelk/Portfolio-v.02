@@ -4,19 +4,20 @@ const cardMore = document.querySelector(".more")
 const cardBack = document.querySelector(".back")
 const resume = document.querySelector("#resLink")
 
-cardMore.addEventListener("click", function () {
+cardMore.addEventListener("click", function() {
     card.classList.toggle("is-flipped")
 })
 
 
-cardBack.addEventListener("click", function () {
+cardBack.addEventListener("click", function() {
     card.classList.toggle("is-flipped")
 })
 
 const slideShow = document.querySelector(".slideShow")
 var carousel = document.getElementById('carousel'),
     slideTitle = document.querySelector(".slideTiltes")
-    titles = ["Anonymous Alcoholics", "Weather Dashboard", "Code Quize", "Rock, Paper, Sicissors", "Password Generator"],
+titles = ["Anonymous Alcoholics", "Weather Dashboard", "Code Quize", "Rock, Paper, Sicissors", "Password Generator"],
+    githubRepos = ["https://github.com/grdnd/group-project", "https://github.com/TWelk/WeatherDashboard", "https://github.com/TWelk/CodeQuiz", "https://github.com/TWelk/rpsproject", "https://github.com/TWelk/PassGen-v.02"],
     pics = ["./Assets/Images/Anonymous Alcoholics.jpg", "./Assets/Images/WeatherDashboard.jpg", "./Assets/Images/CodeQuiz.jpg", "./Assets/Images/RockPaperScissors.jpg", "./Assets/Images/PassGen.jpg"],
     items = ['https://grdnd.github.io/group-project', 'https://twelk.github.io/WeatherDashboard/', 'https://twelk.github.io/CodeQuiz/', 'https://twelk.github.io/rpsproject', 'https://twelk.github.io/PassGen-v.02'],
     nextbtn = document.getElementById('nextButton'),
@@ -24,7 +25,7 @@ var carousel = document.getElementById('carousel'),
     paginator = document.getElementById('carousel-pagination'),
     pageCounter = 0;
 
-function makeList(arr, arr2, arr3) {
+function makeList(arr, arr2, arr3, arr4) {
     var list = document.createElement('ul'),
         tList = document.createElement('ul'),
         pager = document.createElement('ul'),
@@ -32,12 +33,24 @@ function makeList(arr, arr2, arr3) {
 
     for (var i = 0; i < itemCount; i++) {
         var link = document.createElement('a'),
+            link2 = document.createElement('a'),
             item = document.createElement('img'),
-            head = document.createElement('li'),
-            circle = document.createElement('li');
+            gitLink = document.createElement('a'),
+            gitText = document.createElement('p'),
+            gitApp = document.createElement('p'),
+            head2 = document.createElement('p'),
+            head = document.createElement('li')
+        circle = document.createElement('li');
         link.href = arr[i];
+        link2.href = arr[i];
         item.src = arr2[i];
-        head.textContent = arr3[i];
+        gitLink.href = arr4[i];
+        gitText.textContent = "GitHub/Repo";
+        gitApp.textContent = "Application";
+        gitLink.appendChild(gitText);
+        link2.appendChild(gitApp);
+        head2.textContent = arr3[i];
+        head.append(head2, gitLink, link2)
         link.appendChild(item);
         list.appendChild(link);
         tList.appendChild(head)
@@ -54,17 +67,14 @@ function makeList(arr, arr2, arr3) {
 
     return list;
 }
-carousel.appendChild(makeList(items, pics, titles));
+carousel.appendChild(makeList(items, pics, titles, githubRepos));
 
 function nextSlide() {
     var listItems = document.getElementById('carousel-items'),
         firstItem = listItems.childNodes[0],
-        // listTitles = document.getElementById('projectNames'),
-        // firstTitle = listTitles.childNodes[0],
         titleList = document.getElementById('projectNames');
-        pageList = document.getElementById('carousel-pagination-items');
+    pageList = document.getElementById('carousel-pagination-items');
     listItems.insertBefore(firstItem, listItems.lastChild.nextSibling);
-    // listTitles.insertBefore(firstTitle, listTitles.lastChild.nextSibling);
 
     // change to next pagination circle
     titleList.childNodes[pageCounter].classList.remove('active-circle');
@@ -81,12 +91,9 @@ function nextSlide() {
 function prevSlide() {
     var listItems = document.getElementById('carousel-items'),
         lastItem = listItems.lastChild,
-        // listTitles = document.getElementById('projectNames'),
-        // lastTitle = listTitles.lastChild,
         pageList = document.getElementById('carousel-pagination-items');
-        titleList = document.getElementById('projectNames');
+    titleList = document.getElementById('projectNames');
     listItems.insertBefore(lastItem, listItems.childNodes[0]);
-    // listTitles.insertBefore(lastTitle, listTitles.childNodes[0]);
 
     // change to next pagination circle
     titleList.childNodes[pageCounter].classList.remove('active-circle');
@@ -103,6 +110,6 @@ function prevSlide() {
 nextbtn.addEventListener('click', nextSlide, false);
 prevbtn.addEventListener('click', prevSlide, false);
 
-resume.addEventListener("click", function () {
+resume.addEventListener("click", function() {
     document.location.href = "./Tyler Welker - Resume.pdf"
 })
