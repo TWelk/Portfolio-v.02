@@ -111,5 +111,5 @@ nextbtn.addEventListener('click', nextSlide, false);
 prevbtn.addEventListener('click', prevSlide, false);
 
 resume.addEventListener("click", function() {
-    document.location.href = "./Tyler Welker - Resume.pdf"
+    document.location.href = "./Tyler Welker - Resume2.pdf"
 })
