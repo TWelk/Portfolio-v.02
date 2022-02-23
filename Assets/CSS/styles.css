@@ -629,12 +629,15 @@
             .businessCard {
                 width: 320px;
             }
+            .businessCard__header {
+                margin: 55px 30px;
+            }
             .profilePic2 {
                 margin: 30px 20px;
             }
             .businessCard__face--front h2 {
                 color: #fff;
-                font-size: 32px;
+                font-size: 18px;
             }
             .aboutMe p {
                 margin-top: 6%;
