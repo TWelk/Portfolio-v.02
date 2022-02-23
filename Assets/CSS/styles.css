@@ -20,7 +20,7 @@
             background-color: var(--dark);
             color: var(--primary);
         }
-
+        
         h2 {
             text-align: center;
         }
@@ -295,7 +295,7 @@
         
         .container {
             position: relative;
-            height: 600px;
+            height: 100%;
             width: 50%;
             margin: 0 auto;
         }
@@ -306,7 +306,7 @@
             overflow: hidden;
             text-align: center;
         }
-
+        
         #projectNames {
             color: var(--primary);
             margin: 5% 0;
@@ -318,19 +318,21 @@
             object-fit: cover;
         }
         
-        #carousel-pagination, .slideTiltes {
+        #carousel-pagination,
+        .slideTiltes {
             display: flex;
             justify-content: center;
             padding: 10px 0;
         }
         
-        #carousel-pagination ul, .slideTiltes ul {
+        #carousel-pagination ul,
+        .slideTiltes ul {
             list-style-type: none;
             -webkit-padding-start: 0;
             -webkit-margin-after: 0;
             -webkit-margin-before: 0;
         }
-
+        
         #projectNames li {
             display: none;
             height: 15px;
@@ -350,7 +352,7 @@
         #projectNames li.active-circle {
             display: block;
         }
-
+        
         #carousel-pagination-items li.active-circle {
             background: var(--secondary)
         }
@@ -382,7 +384,7 @@
             left: -11%;
             position: absolute;
             top: 50%;
-            transform: translateY(-50%);
+            transform: translateY(-250%);
             background: transparent;
             border: 0;
             cursor: pointer;
@@ -392,7 +394,7 @@
             right: -11%;
             position: absolute;
             top: 50%;
-            transform: translateY(-50%);
+            transform: translateY(-250%);
             background: transparent;
             border: 0;
             cursor: pointer;
@@ -413,7 +415,7 @@
             text-align: center;
             font-size: xx-large;
         }
-
+        
         #links {
             margin-bottom: 2%;
             color: #fff;
